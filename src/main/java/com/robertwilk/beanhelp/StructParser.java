@@ -1,4 +1,4 @@
-package main.java.com.robertwilk.beanhelp;
+package com.robertwilk.beanhelp;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

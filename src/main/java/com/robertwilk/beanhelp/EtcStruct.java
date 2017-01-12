@@ -1,4 +1,4 @@
-package main.java.com.robertwilk.beanhelp;
+package com.robertwilk.beanhelp;
 
 /**
  * Created by Robert Wilk on 1/10/2017.
