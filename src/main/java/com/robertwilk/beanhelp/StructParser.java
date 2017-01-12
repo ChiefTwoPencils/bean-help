@@ -14,24 +14,10 @@ import java.util.stream.Collectors;
 public class StructParser {
     private FileOutputStream fos;
 
-/*    public void parseToFile(Object object) throws IOException, InvocationTargetException, IllegalAccessException {
+    public void parseToFile(Object object) throws IOException, InvocationTargetException, IllegalAccessException {
         fos = new FileOutputStream("example" + object.getClass().getSimpleName());
         for (Method getter : getGetters(getMethods(object.getClass()))) {
             writeField(getField(getter.getName()), String.valueOf(getter.invoke(object)));
-        }
-        fos.close();
-    }*/
-
-    public void parseToFile(Object object) throws IOException, InvocationTargetException, IllegalAccessException {
-        fos = new FileOutputStream("example" + object.getClass().getSimpleName());
-        List<Method> getters = Arrays.stream(object.getClass().getMethods())
-                .filter(method -> method.getName().startsWith("get") && !method.getName().endsWith("Class"))
-                .collect(Collectors.toList());
-        for (Method getter : getters) {
-            String methodName = getter.getName();
-            String key = String.valueOf(Character.toLowerCase(methodName.charAt(3))) +
-                    methodName.substring(4, methodName.length());
-            writeField(key, String.valueOf(getter.invoke(object)));
         }
         fos.close();
     }
