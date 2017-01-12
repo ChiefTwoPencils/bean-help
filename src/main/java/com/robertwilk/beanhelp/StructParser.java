@@ -27,8 +27,7 @@ public class StructParser {
     }
 
     private String getField(String methodName) {
-        return String.valueOf(Character.toLowerCase(methodName.charAt(3))) +
-                methodName.substring(4, methodName.length());
+        return "" + Character.toLowerCase(methodName.charAt(3)) + methodName.substring(4);
     }
 
     private Method[] getMethods(Class clazz) {
